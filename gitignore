@@ -1,0 +1,6 @@
+.bloop
+.log
+.metals
+metals.sbt
+__pycache__
+TAGS

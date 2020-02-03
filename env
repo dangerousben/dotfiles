@@ -1,0 +1,21 @@
+# -*- mode: sh -*-
+#
+# Generic env file
+#
+# To load in bash/dash/hopefully any bourne-ish shell:
+#
+# set -a
+# . ~/.env
+# set +a
+
+PATH=~/bin:~/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/games
+
+EDITOR=emacsclient
+VISUAL=emacsclient
+PAGER=less
+
+LESS="-FRSXin"
+
+JAVA_TOOL_OPTIONS="-Xmx1G -XX:MinHeapFreeRatio=20 -XX:MaxHeapFreeRatio=30"
+
+LIBVIRT_DEFAULT_URI=qemu:///system

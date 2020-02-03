@@ -1,0 +1,30 @@
+[user]
+	name = Ben Spencer
+	email = dangerous.ben@gmail.com
+[core]
+	excludesfile = ~/.gitignore
+        hooks = /dev/null
+[color]
+	branch = auto
+	diff = auto
+	status = auto
+	ui = auto
+[diff]
+	renames = copies
+[fetch]
+	prune = true
+[log]
+	decorate = short
+[merge]
+	conflictstyle = diff3
+[push]
+	default = current
+[rebase]
+	autosquash = true
+	autoStash = true
+[rerere]
+	enabled = true
+[stash]
+        showPatch = true
+[status]
+        showStash = true
