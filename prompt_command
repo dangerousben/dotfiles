@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# Low-key wrapped display (and put it back afterwards)
+echo -e "\e[2m----"
+trap 'echo -e "----\e[0m"' EXIT
+
+# git
+source ~/src/git/contrib/completion/git-prompt.sh
+GIT_PS1_SHOWDIRTYSTATE=1
+GIT_PS1_SHOWSTASHEDSTATE=1
+GIT_PS1_SHOWUNTRACKEDFILES=1
+GIT_PS1_SHOWUPSTREAM="auto verbose name"
+GIT_PS1_DESCRIBE_STYLE=branch
+
+git=$(__git_ps1)
+if [ -n "$git" ]; then echo "git:$git"; fi
+
+# kubectl
+ctx=$(kubectl config current-context)
+if [ -n "$ctx" ]; then
+    ns=$(kubectl config view -o=jsonpath="{.contexts[?(@.name==\"$ctx\")].context.namespace}") || default
+    echo "kubectl:$ctx:$ns"
+fi
