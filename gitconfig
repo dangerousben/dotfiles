@@ -19,6 +19,7 @@
 	decorate = short
 [merge]
 	conflictstyle = diff3
+	ff = only
 [push]
 	default = current
 [rebase]
