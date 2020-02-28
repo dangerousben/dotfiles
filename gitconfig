@@ -13,6 +13,8 @@
 	renames = copies
 [fetch]
 	prune = true
+[help]
+        autocorrect = 10
 [log]
 	decorate = short
 [merge]
