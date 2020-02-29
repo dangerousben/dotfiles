@@ -1,0 +1,23 @@
+#!/bin/sh
+
+case $1 in
+    "8")
+        TARGET=~/opt/graalvm-ce-java8-19.3.1
+        ;;
+    "11")
+        TARGET=~/opt/graalvm-ce-java11-19.3.1
+        ;;
+    *)
+        echo "Unrecognised graal version: $1"
+        exit 1
+        ;;
+esac
+
+if [ ! -e $TARGET ]; then
+    echo "Target $TARGET not found"
+    exit 1
+fi
+
+ln -fns $TARGET ~/opt/graalvm
+
+echo "Graalvm symlink updated to $TARGET"

@@ -1,0 +1,15 @@
+#!/bin/bash
+
+while IFS= read -r -d '' git_dir
+do (
+    set -euo pipefail
+    GIT_DIR="$git_dir" GIT_WORK_TREE=$(dirname "$git_dir")
+    export GIT_DIR GIT_WORK_TREE
+    echo "${GIT_WORK_TREE}..."
+    echo fetch
+    git fetch -q
+    (git diff-index --quiet HEAD && echo pull && git pull --ff-only -q) || true
+    echo gc
+    git gc --aggressive --quiet || true
+    echo
+) done < <(fd -0 -H -td '\.git$')

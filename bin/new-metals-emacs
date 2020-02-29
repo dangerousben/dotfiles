@@ -1,0 +1,6 @@
+#!/bin/sh
+
+SCALA_VERSION=2.12
+METALS_VERSION=${1:-0.8.1-SNAPSHOT}
+
+coursier bootstrap --java-opt -Xss4m --java-opt -Xms100m --java-opt -Xmx200m -Xmx --java-opt -Dmetals.client=emacs org.scalameta:metals_$SCALA_VERSION:$METALS_VERSION -r bintray:scalacenter/releases -r sonatype:snapshots -o ~/bin/metals-emacs -f
