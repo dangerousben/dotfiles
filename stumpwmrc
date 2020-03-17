@@ -1,0 +1,53 @@
+;;;; -*-lisp-*-
+
+(in-package :stumpwm)
+
+(asdf:oos 'asdf:load-op 'swank)
+(swank:create-server :dont-close t)
+
+(setf *debug-level* 0)
+(setf *show-command-backtrace* t)
+
+(set-prefix-key (kbd "C-a"))
+(define-key *root-map* (kbd "a") "meta C-a")
+
+(define-key *top-map* (kbd "M-TAB") "other-in-frame")
+(define-key *root-map* (kbd "C-a") "other-in-frame")
+(define-key *root-map* (kbd "C-n") "next-in-frame")
+(define-key *root-map* (kbd "n") "next-in-frame")
+(define-key *root-map* (kbd "C-p") "prev-in-frame")
+(define-key *root-map* (kbd "p") "prev-in-frame")
+(define-key *root-map* (kbd "w") "echo-frame-windows")
+(define-key *root-map* (kbd "\"") "frame-windowlist")
+(define-key *root-map* (kbd "'") "select-window-by-name")
+(define-key *root-map* (kbd "N") "number")
+
+(define-key *root-map* (kbd "C-Left") "move-window left")
+(define-key *root-map* (kbd "C-Right") "move-window right")
+(define-key *root-map* (kbd "C-Up") "move-window up")
+(define-key *root-map* (kbd "C-Down") "move-window down")
+
+(define-key *root-map* (kbd "c") "exec st")
+(define-key *root-map* (kbd "t") "time")
+(define-key *root-map* (kbd "L") "exec xscreensaver-command -lock")
+
+(define-key *root-map* (kbd "P") "exec playerctl play-pause")
+(define-key *root-map* (kbd "<") "exec playerctl previous")
+(define-key *root-map* (kbd ">") "exec playerctl next")
+
+(defprogram-shortcut conkeror :map *root-map* :key (kbd "C"))
+(defprogram-shortcut chromium-browser :props '(:class "Google-chrome") :map *root-map* :key (kbd "W"))
+
+(setf *mouse-focus-policy* :sloppy)
+(setf *run-or-raise-all-groups* nil)
+
+(defun banish-on-focus (cur last)
+  (declare (ignore last))
+  (multiple-value-bind (x y)
+      (xlib:global-pointer-position *display*)
+    (unless (eq cur (find-frame (current-group) x y))
+      (banish))))
+
+(add-hook *focus-frame-hook* 'banish-on-focus)
+
+(set-focus-color "Black")
