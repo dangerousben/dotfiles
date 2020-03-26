@@ -20,3 +20,5 @@ JAVA_TOOL_OPTIONS="-Xmx1G -XX:MinHeapFreeRatio=20 -XX:MaxHeapFreeRatio=30"
 export SBT_OPTS="-J-Xmx512m"
 
 LIBVIRT_DEFAULT_URI=qemu:///system
+
+GUIX_LOCPATH=$HOME/.guix-profile/lib/locale
