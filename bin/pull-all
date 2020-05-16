@@ -7,8 +7,8 @@ do (
     export GIT_DIR GIT_WORK_TREE
     echo "${GIT_WORK_TREE}..."
     echo fetch
-    git fetch -q
-    (git diff-index --quiet HEAD && echo pull && git pull --ff-only -q) || true
+    git fetch -q --recurse-submodules
+    (git diff-index --quiet HEAD && echo pull && git pull -q --ff-only --recurse-submodules) || true
     echo gc
     git gc --aggressive --quiet || true
     echo
