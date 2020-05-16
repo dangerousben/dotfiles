@@ -1,0 +1,6 @@
+#!/bin/sh -e
+
+tar -c -C ~ -f ~/backup.tgz -vz writing .electrum
+age -p -o ~/backup.tgz.age ~/backup.tgz
+scp ~/*.kdbx ~/backup.tgz.age irc:
+rm backup.tgz backup.tgz.age
