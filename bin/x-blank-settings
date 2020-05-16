@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# Blank after 40 minutes
+xset s blank
+xset s 2400
+
+# DPMS off after an hour (there is probably no diff in the 3 DPMS states on non-crt monitors)
+xset dpms 0 0 3600
