@@ -10,6 +10,6 @@ do (
     git fetch -q --recurse-submodules
     (git diff-index --quiet HEAD && echo pull && git pull -q --ff-only --recurse-submodules) || true
     echo gc
-    git gc --aggressive --quiet || true
+    git gc --quiet || true
     echo
 ) done < <(fd -0 -H -td '\.git$')
