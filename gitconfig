@@ -1,6 +1,8 @@
 [user]
         name = Ben Spencer
         email = dangerous.ben@gmail.com
+[branch]
+        autoSetupRebase = remote
 [core]
         excludesfile = ~/.gitignore
         hooks = /dev/null
@@ -13,8 +15,11 @@
         renames = copies
 [fetch]
         prune = true
+        recurseSubmodules = true
 [help]
         autocorrect = -1
+[http]
+	cookiefile = /home/ben/.gitcookies
 [log]
         decorate = short
 [merge]
