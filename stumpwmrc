@@ -38,6 +38,11 @@
 (defprogram-shortcut conkeror :map *root-map* :key (kbd "C"))
 (defprogram-shortcut chromium-browser :props '(:class "Google-chrome") :map *root-map* :key (kbd "W"))
 
+(define-frame-preference "Default"
+  (0 t nil :class "Conkeror")
+  (1 t nil :class "st-256color")
+  (1 t nil :class "Emacs"))
+
 (setf *mouse-focus-policy* :sloppy)
 (setf *run-or-raise-all-groups* nil)
 
