@@ -1,0 +1,3 @@
+#!/bin/sh -e
+
+exec java -XX:+UseParallelGC -cp ~/opt/tla2tools.jar tlc2.TLC "$@"
