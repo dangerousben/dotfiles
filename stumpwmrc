@@ -28,6 +28,7 @@
 (define-key *root-map* (kbd "C-Down") "move-window down")
 
 (define-key *root-map* (kbd "c") "exec st -t terminal scroll")
+(define-key *root-map* (kbd "C") "exec PRIVATE_MODE=true st -t terminal scroll")
 (define-key *root-map* (kbd "t") "time")
 (define-key *root-map* (kbd "L") "exec xscreensaver-command -lock")
 

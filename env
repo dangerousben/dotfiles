@@ -8,9 +8,14 @@
 # . ~/.env
 # set +a
 
-# https://unix.stackexchange.com/questions/18212/bash-history-ignoredups-and-erasedups-setting-conflict-with-common-history#answer-18443
-HISTCONTROL=ignoredups:erasedups
-PROMPT_COMMAND="history -n; history -w; history -c; history -r; $PROMPT_COMMAND"
+if [ -z "$PRIVATE_MODE" ]; then
+    # https://unix.stackexchange.com/questions/18212/bash-history-ignoredups-and-erasedups-setting-conflict-with-common-history#answer-18443
+    HISTCONTROL=ignoredups:erasedups
+    PROMPT_COMMAND="history -n; history -w; history -c; history -r; $PROMPT_COMMAND"
+else
+    PS1="\\033[1m\\033[31mPRIVATE\\033[0m $PS1"
+    unset HISTFILE
+fi
 
 PATH=~/bin:~/.local/bin:~/.gem/ruby/2.5.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/games
 
