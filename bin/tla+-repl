@@ -1,0 +1,3 @@
+#!/bin/sh -e
+
+CLASSPATH=$CLASSPATH:~/opt/tla2tools.jar python ~/src/tla+/tlaplus_repl/tla_repl.py
