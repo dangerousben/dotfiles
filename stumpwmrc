@@ -35,7 +35,6 @@
 (define-key *root-map* (kbd "<") "exec playerctl previous")
 (define-key *root-map* (kbd ">") "exec playerctl next")
 
-(defprogram-shortcut conkeror :map *root-map* :key (kbd "C"))
 (defprogram-shortcut chromium-browser :props '(:class "Google-chrome") :map *root-map* :key (kbd "W"))
 
 (define-frame-preference "Default"
