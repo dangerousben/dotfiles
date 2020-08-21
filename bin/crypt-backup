@@ -1,6 +1,24 @@
 #!/bin/sh -e
 
-tar -c -C ~ -f ~/backup.tgz -vz writing .electrum
+# Cleanup at end
+cleanup() {
+    rm -f ~/backup.tgz ~/backup.tgz.age
+}
+trap cleanup EXIT
+
+# Tar up stuff I care about
+tar -c -C ~ -f ~/backup.tgz -z ~/writing ~/.electrum/wallets
+
+# Encrypt it
 age -p -o ~/backup.tgz.age ~/backup.tgz
+
+# Have a gander at the size
+ls -sh ~/backup.tgz ~/backup.tgz.age
+
+# Scoot it over the network, along with already-encrypted password manager files
 scp ~/*.kdbx ~/backup.tgz.age irc:
-rm backup.tgz backup.tgz.age
+
+# Check we can decrypt
+age -d ~/backup.tgz.age | tar -tz
+
+cowsay "All Done!"
