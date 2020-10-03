@@ -1,0 +1,4 @@
+#!/bin/sh -e
+
+cd /home/ben/src/tagainijisho/
+./src/gui/tagainijisho "$@"
