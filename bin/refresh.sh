@@ -9,6 +9,7 @@ firejail
 sangria-graphql
 skarnet
 suckless
+stumpwm
 tla+
 typelevel
 twitter
