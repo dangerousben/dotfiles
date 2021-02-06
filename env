@@ -28,3 +28,4 @@ LESS="-FRSXin"
 LIBVIRT_DEFAULT_URI=qemu:///system
 
 GUIX_LOCPATH=$HOME/.guix-profile/lib/locale
+GUIX_PROFILE="/home/ben/.guix-profile"
