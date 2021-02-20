@@ -17,7 +17,7 @@ else
     unset HISTFILE
 fi
 
-PATH=~/bin:~/.local/bin:~/.gem/ruby/2.5.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/games
+PATH=~/bin:~/.local/bin:~/.cargo/bin:~/.gem/ruby/2.5.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/games
 
 EDITOR=emacsclient
 VISUAL=emacsclient
