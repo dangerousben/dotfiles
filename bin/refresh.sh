@@ -1,10 +1,11 @@
 #!/bin/sh
 
-(cd ~/src/coursier/coursier && ./refresh.sh; cd ~/src/metals && ./refresh.sh; cd ~/src/bloop && ./refresh.sh) &
+(cd ~/src/coursier/coursier && ./refresh.sh; cd ~/src/metals && ./refresh.sh; coursier install bloop) &
 
 (cd ~/src/emacs && ./refresh.sh; cd ~/src/git && ./refresh.sh; cd ~/src/rage && ./refresh.sh; cd ~/src/elixir-ls && ./refresh.sh) &
 
 repos=$(cat <<'EOF'
+bloop
 firejail
 sangria-graphql
 skarnet
