@@ -11,4 +11,4 @@ coursier bootstrap \
   --java-opt -Xmx1G \
   -Dmetals.client=emacs \
   "org.scalameta:metals_${SCALA_VERSION}:${METALS_VERSION}" \
-  -o ~/bin/metals-emacs -f
+  -o ~/bin/metals -f
