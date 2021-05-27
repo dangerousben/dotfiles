@@ -7,7 +7,7 @@ cleanup() {
 trap cleanup EXIT
 
 # Tar up stuff I care about
-tar -c -C ~ -f ~/backup.tgz -z ~/writing ~/.electrum/wallets
+tar -c -C ~ -f ~/backup.tgz -z ~/writing ~/.electrum/wallets ~/.walletwasabi/client/WalletBackups
 
 # Encrypt it
 age -p -o ~/backup.tgz.age ~/backup.tgz
