@@ -12,6 +12,7 @@
         status = auto
         ui = auto
 [diff]
+        algorithm = histogram
         renames = copies
 [fetch]
         prune = true
