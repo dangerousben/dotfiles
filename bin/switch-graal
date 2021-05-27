@@ -2,10 +2,10 @@
 
 case $1 in
     "8")
-        TARGET=~/opt/graalvm-ce-java8-19.3.1
+        TARGET=~/opt/graalvm-java8
         ;;
     "11")
-        TARGET=~/opt/graalvm-ce-java11-19.3.1
+        TARGET=~/opt/graalvm-java11
         ;;
     *)
         echo "Unrecognised graal version: $1"
