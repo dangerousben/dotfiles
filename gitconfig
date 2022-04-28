@@ -13,6 +13,8 @@
         ui = auto
 [diff]
         algorithm = histogram
+        colorMoved = zebra
+        colorMovedWS = allow-indentation-change
         renames = copies
 [diff "ansible-vault"]
 	textconv = ansible-vault view --vault-password-file=.vault_password
