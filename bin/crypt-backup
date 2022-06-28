@@ -1,10 +1,16 @@
-#!/bin/sh -e
+#!/bin/bash
+
+set -eo pipefail
 
 # Cleanup at end
 cleanup() {
-    rm -f ~/backup.tgz ~/backup.tgz.age
+    if [ "$1" -eq 0 ]; then
+        rm -f ~/backup.tgz ~/backup.tgz.age
+    else
+        echo "error occurred ($1), not deleting backup files"
+    fi
 }
-trap cleanup EXIT
+trap 'cleanup $?' EXIT
 
 # Tar up stuff I care about
 tar -c -C ~ -f ~/backup.tgz -z ~/writing ~/.electrum/wallets ~/.walletwasabi/client/WalletBackups
