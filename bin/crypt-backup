@@ -16,7 +16,8 @@ age -p -o ~/backup.tgz.age ~/backup.tgz
 ls -sh ~/backup.tgz ~/backup.tgz.age
 
 # Scoot it over the network, along with already-encrypted password manager files
-scp ~/*.kdbx ~/backup.tgz.age irc:
+scp ~/*.kdbx ~/backup.tgz.age backup.justworks.xyz:
+scp ~/*.kdbx ~/backup.tgz.age seedbox:
 
 # Check we can decrypt
 age -d ~/backup.tgz.age | tar -tz
