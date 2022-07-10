@@ -31,12 +31,15 @@
 (define-key *root-map* (kbd "C") "exec PRIVATE_MODE=true st")
 (define-key *root-map* (kbd "t") "time")
 (define-key *root-map* (kbd "L") "exec xscreensaver-command -lock")
+(define-key *root-map* (kbd "B") "exec xsel | xsel -bi")
 
 (define-key *root-map* (kbd "P") "exec playerctl play-pause")
 (define-key *root-map* (kbd "<") "exec playerctl previous")
 (define-key *root-map* (kbd ">") "exec playerctl next")
 
 (defprogram-shortcut chromium-browser :props '(:class "Google-chrome") :map *root-map* :key (kbd "W"))
+(defprogram-shortcut firefox :props '(:class "firefox") :map *root-map* :key (kbd "F"))
+(defprogram-shortcut tor-browser :props '(:class "Tor Browser") :map *root-map* :key (kbd "T"))
 
 (define-frame-preference "Default"
   (0 t nil :class "Conkeror")
