@@ -11,19 +11,25 @@
 if [ -z "$PRIVATE_MODE" ]; then
     # https://unix.stackexchange.com/questions/18212/bash-history-ignoredups-and-erasedups-setting-conflict-with-common-history#answer-18443
     HISTCONTROL=ignoredups:erasedups
+    HISTFILESIZE=5000
+    HISTSIZE=5000
+    # shopt -s histappend
+    # PROMPT_COMMAND="history -n; history -w; history -c; history -r; $PROMPT_COMMAND"
     PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 else
     PS1="\\033[1m\\033[31mPRIVATE\\033[0m $PS1"
     unset HISTFILE
 fi
 
-PATH=~/bin:~/.local/bin:~/.cargo/bin:~/.local/share/coursier/bin:~/.gem/ruby/2.5.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/games
+PATH=~/bin:~/.local/bin:~/.cargo/bin:~/.local/share/coursier/bin:~/opt/go/bin:~/go/bin:~/.dotnet/tools:~/.gem/ruby/2.7.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/games
 
 EDITOR=emacsclient
 VISUAL=emacsclient
 PAGER=less
 
 LESS="-FRSXin"
+
+JAVA_HOME=$HOME/opt/jdk
 
 LIBVIRT_DEFAULT_URI=qemu:///system
 

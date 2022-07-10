@@ -1,0 +1,11 @@
+#!/bin/bash
+
+while IFS= read -r -d '' git_dir
+do (
+    set -euo pipefail
+    GIT_DIR="$git_dir" GIT_WORK_TREE=$(dirname "$git_dir")
+    export GIT_DIR GIT_WORK_TREE
+    echo "$(readlink -f $GIT_WORK_TREE)..."
+    git gc
+    echo
+) done < <(fd -0 -H -td '\.git$')
