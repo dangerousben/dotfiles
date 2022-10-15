@@ -32,6 +32,7 @@
 (define-key *root-map* (kbd "t") "time")
 (define-key *root-map* (kbd "L") "exec xscreensaver-command -lock")
 (define-key *root-map* (kbd "B") "exec xsel | xsel -bi")
+(define-key *root-map* (kbd "/") "exec st bc /home/ben/.bcrc")
 
 (define-key *root-map* (kbd "P") "exec playerctl play-pause")
 (define-key *root-map* (kbd "<") "exec playerctl previous")
