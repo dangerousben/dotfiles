@@ -23,6 +23,9 @@ fi
 
 PATH=~/bin:~/.local/bin:~/.cargo/bin:~/.local/share/coursier/bin:~/opt/go/bin:~/go/bin:~/.dotnet/tools:~/.gem/ruby/2.7.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/games
 
+# Flags and files to be processed before those provided on the cli respectively, on each invocation.  Used here to include maths lib and increase default scale.
+BC_ENV_ARGS="-l"
+
 EDITOR=emacsclient
 VISUAL=emacsclient
 PAGER=less
