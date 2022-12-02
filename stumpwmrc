@@ -38,6 +38,19 @@
 (define-key *root-map* (kbd "<") "exec playerctl previous")
 (define-key *root-map* (kbd ">") "exec playerctl next")
 
+;; Take screenshot
+;;
+;; This conveniently matches the equivalent key on windows.  Unfortunately that takes screenshots directly to
+;; the clipboard, something that scrot doesn't know how to do.  Neither do I, I've never been sure quite how
+;; non-text content types work in X selections.  If scrot could write to sdtout then perhaps something could
+;; pick that up, but that doesn't seem to be an option.  What *is* an option is to exec something on the saved
+;; image, so a script could do something with it and then delete it.  Either this or finding a screenshot app
+;; that supports what I want directly seems to be the way fowrward.
+;;
+;; Funnily enough, windows has the opposite problem, in that it seems to make it bloody difficult to write the
+;; screenshot from the clipboard to a file.
+(define-key *top-map* (kbd "s-S") "exec scrot -s")
+
 (defprogram-shortcut chromium-browser :props '(:class "Google-chrome") :map *root-map* :key (kbd "W"))
 (defprogram-shortcut firefox :props '(:class "firefox") :map *root-map* :key (kbd "F"))
 (defprogram-shortcut tor-browser :props '(:class "Tor Browser") :map *root-map* :key (kbd "T"))
