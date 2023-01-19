@@ -1,3 +1,3 @@
 #!/bin/sh
 
-youtube-dl --all-subs --embed-subs $@
+PYTHONPATH=/home/ben/src/youtube-dl:$PYTHONPATH python -m youtube_dl --all-subs --embed-subs "$@"
