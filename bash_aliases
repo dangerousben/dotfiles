@@ -17,3 +17,5 @@ alias gsh="git show"
 alias gsw="git show -w"
 alias gp="git push"
 alias gpf="git pull --ff-only"
+
+alias dialyzer="dialyzer --no_check_plt -Wno_unused -Wunmatched_returns -Werror_handling -Wunderspecs"
