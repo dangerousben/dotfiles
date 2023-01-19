@@ -7,9 +7,12 @@
 repos=$(cat <<'EOF'
 bloop
 coreutils
+emacs-packages
 firejail
+git
 glibc
 linux
+postgres
 sangria-graphql
 skarnet
 suckless
@@ -17,9 +20,9 @@ stumpwm
 tla+
 typelevel
 twitter
+uBlockOrigin
 youtube-dl
 yt-dlp
-emacs-packages
 EOF
 )
 
