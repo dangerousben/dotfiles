@@ -32,6 +32,8 @@ PAGER=less
 
 LESS="-FRSXin"
 
+RIPGREP_CONFIG_PATH=~/.ripgreprc
+
 JAVA_HOME=$HOME/opt/jdk
 
 LIBVIRT_DEFAULT_URI=qemu:///system
