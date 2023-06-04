@@ -4,6 +4,11 @@ alias ec="emacsclient -n"
 alias fics="xboard -size Medium -ics -icshost freechess.org"
 alias diff=colordiff
 
+# feh: sure there must be a better was to do this (though I'm not sure why it bothers me so much compared to other stuff)
+# -F fullscreen, -Z auto zoom to screen size, -d show (draw) filename, -r recursively descend into directory args
+# Other potential options of interest: -x create borderless windows, presumably irrelevant in a borderless WM
+alias feh='feh -FZdr'
+
 # Git shortcuts
 alias gs="git status"
 alias gl="git log"
