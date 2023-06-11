@@ -1,7 +1,5 @@
 #!/bin/sh
 
-(cd ~/src/coursier/coursier && ./refresh.sh; cd ~/src/metals && ./refresh.sh; coursier install bloop) &
-
 (cd ~/src/emacs && ./refresh.sh; cd ~/src/git && ./refresh.sh; cd ~/src/rage && ./refresh.sh; cd ~/src/elixir-ls && ./refresh.sh; cd ~/src/erlang_ls && ./refresh.sh) &
 
 repos=$(cat <<'EOF'
