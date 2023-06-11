@@ -36,4 +36,4 @@ for d in $repos; do
 done
 
 guix pull
-guix package -u
+guix package -u -d
