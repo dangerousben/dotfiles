@@ -33,6 +33,8 @@ PAGER=less
 # -F quit if only one screen; -R output ansi color escapes in raw form; -S truncate rather than wrap long lines; -X don't send termcap init (so that terminals don't switch/clear screen; -i case insensitive searches, -n suppress line numbers (unnecessary overhead); -j.5 set target line for jumps (eg from search or goto line) to middle of screen (newly added, will see how I get on with it)
 LESS="-FRSXin -j.5"
 
+GIT_EXEC_PATH=~/src/git
+
 RIPGREP_CONFIG_PATH=~/.ripgreprc
 
 JAVA_HOME=$HOME/opt/jdk
