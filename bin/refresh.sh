@@ -1,6 +1,19 @@
 #!/bin/sh
 
-(cd ~/src/emacs && ./refresh.sh; cd ~/src/git && ./refresh.sh; cd ~/src/rage && ./refresh.sh; cd ~/src/elixir-ls && ./refresh.sh; cd ~/src/erlang_ls && ./refresh.sh) &
+refresh_package () {
+    cd "$1" && chronic ./refresh.sh
+}
+
+(
+    refresh_package ~/src/age
+    refresh_package ~/src/erlang_ls
+    refresh_package ~/src/comit-network-atomic-swap/xmr-btc-swap
+    refresh_package ~/src/emacs
+    refresh_package ~/src/fd
+    refresh_package ~/src/git
+    refresh_package ~/src/rage
+    refresh_package ~/src/ripgrep
+)
 
 repos=$(cat <<'EOF'
 anki
