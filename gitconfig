@@ -1,6 +1,9 @@
 [user]
         name = Ben Spencer
         email = dangerous.ben@gmail.com
+[blame]
+        coloring = repeatedLines
+        showRoot = true
 [branch]
         autoSetupRebase = remote
 [core]
