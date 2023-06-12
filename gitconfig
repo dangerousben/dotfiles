@@ -20,7 +20,7 @@
 	textconv = ansible-vault view --vault-password-file=.vault_password
 [fetch]
         prune = true
-        recurseSubmodules = true
+        recurseSubmodules = on-demand
 [help]
         autocorrect = -1
 [http]
@@ -32,6 +32,7 @@
         ff = only
 [push]
         default = current
+        recurseSubmodules = check
 [rebase]
         autoStash = true
         autosquash = true
@@ -41,3 +42,5 @@
         showPatch = true
 [status]
         showStash = true
+[submodule]
+        recurse=true
