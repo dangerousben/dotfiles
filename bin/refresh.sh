@@ -47,5 +47,5 @@ for d in $repos; do
     cd ~/src/"$d" && pull-all
 done
 
-guix pull
-guix package -u -d
+chronic guix pull
+chronic guix package -u -d
