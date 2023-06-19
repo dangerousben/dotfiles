@@ -47,5 +47,6 @@
         showPatch = true
 [status]
         showStash = true
+        submoduleSummary = true
 [submodule]
         recurse=true
