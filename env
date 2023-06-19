@@ -34,6 +34,7 @@ PAGER=less
 LESS="-FRSXin -j.5"
 
 GIT_EXEC_PATH=~/src/git
+GIT_TEMPLATE_DIR=~/.local/share/git-core/templates
 
 RIPGREP_CONFIG_PATH=~/.ripgreprc
 
