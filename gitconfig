@@ -28,6 +28,8 @@
         autocorrect = -1
 [http]
 	cookiefile = /home/ben/.gitcookies
+[init]
+        defaultBranch = main
 [log]
         decorate = short
 [merge]
