@@ -13,6 +13,7 @@ refresh_package () {
     refresh_package ~/src/git
     refresh_package ~/src/rage
     refresh_package ~/src/ripgrep
+    refresh_package ~/src/suckless/st
 )
 
 repos=$(cat <<'EOF'
