@@ -54,6 +54,7 @@
 (defprogram-shortcut chromium-browser :props '(:class "Google-chrome") :map *root-map* :key (kbd "W"))
 (defprogram-shortcut firefox :props '(:class "firefox") :map *root-map* :key (kbd "F"))
 (defprogram-shortcut tor-browser :props '(:class "Tor Browser") :map *root-map* :key (kbd "T"))
+(defprogram-shortcut tagainijisho :props '(:class "Tagaini Jisho") :map *root-map* :key (kbd "j"))
 
 (define-frame-preference "Default"
   (0 t nil :class "Conkeror")
