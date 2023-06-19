@@ -19,6 +19,7 @@
         colorMoved = zebra
         colorMovedWS = allow-indentation-change
         renames = copies
+        renameLimit = 65536  # default = 1000
 [diff "ansible-vault"]
 	textconv = ansible-vault view --vault-password-file=.vault_password
 [fetch]
