@@ -18,10 +18,11 @@ refresh_package () {
 
 repos=$(cat <<'EOF'
 anki
-bloop
 coreutils
 decentraleyes
+electrum
 emacs-packages
+erlang
 firejail
 glibc
 guix
@@ -34,7 +35,6 @@ suckless
 stumpwm
 tla+
 typelevel
-twitter
 uBlockOrigin
 util-linux
 youtube-dl
