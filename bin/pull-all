@@ -5,7 +5,7 @@ do (
     set -euo pipefail
     GIT_DIR="$git_dir" GIT_WORK_TREE=$(dirname "$git_dir")
     export GIT_DIR GIT_WORK_TREE
-    echo "$(readlink -f $GIT_WORK_TREE)..."
+    echo "$(readlink -f "$GIT_WORK_TREE")..."
     git fetch -q --recurse-submodules
     git pull -q --ff-only --recurse-submodules 2<&1 | sed 's/^/        /' || true
     git gc --quiet || true
