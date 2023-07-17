@@ -23,9 +23,15 @@ alias ga="git add"
 alias gap="git add -p"
 alias gc="git commit"
 alias gca="git commit --amend --no-edit"
+alias gcfu="git commit --fixup"
 alias gsh="git show"
 alias gsw="git show -w"
 alias gp="git push"
 alias gpf="git pull --ff-only"
+
+# Yes I know it's not an alias, but it's as good a place as any
+gcfurb() {
+     git commit --fixup "$1" && git rebase -i "$1"^
+}
 
 alias dialyzer="dialyzer --no_check_plt -Wno_unused -Wunmatched_returns -Werror_handling -Wunderspecs"
