@@ -1,3 +1,5 @@
+# -*- mode: sh -*-
+
 # General
 alias ls="ls --color=yes"
 alias ec="emacsclient -n"
