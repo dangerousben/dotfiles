@@ -35,4 +35,11 @@ gcfurb() {
      git commit --fixup "$1" && git rebase -i "$1"^
 }
 
+# 'git commit amend latest': given a file path, add -p, commit --fixup the latest commit to touch it, and
+# rebase -i.
+gcaml() {
+    LATEST=$(git rev-list -1 HEAD -- "$1")
+    git status && git add -p "$1" && git commit --fixup "$LATEST" && git rebase -i "$LATEST"^
+}
+
 alias dialyzer="dialyzer --no_check_plt -Wno_unused -Wunmatched_returns -Werror_handling -Wunderspecs"
