@@ -42,4 +42,15 @@ gcaml() {
     git status && git add -p "$1" && git commit --fixup "$LATEST" && git rebase -i "$LATEST"^
 }
 
+# Combine the awesome namei with which to cover the common use case (for me at least) of tracking down
+# binaries.
+namebin() {
+    namei -l $(which $1)
+}
+
+# Similarly, track down the package ultimately providing a binary.
+dpbin() {
+    dpkg -S $(realpath $(which $1))
+}
+
 alias dialyzer="dialyzer --no_check_plt -Wno_unused -Wunmatched_returns -Werror_handling -Wunderspecs"
