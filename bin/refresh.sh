@@ -17,26 +17,14 @@ refresh_package () {
 )
 
 repos=$(cat <<'EOF'
-anki
-coreutils
-decentraleyes
 electrum
 emacs-packages
 erlang
-firejail
-glibc
-guix
-linux
 LocalCDN
-postgres
-sangria-graphql
 skarnet
 suckless
 stumpwm
-tla+
-typelevel
 uBlockOrigin
-util-linux
 youtube-dl
 yt-dlp
 EOF
