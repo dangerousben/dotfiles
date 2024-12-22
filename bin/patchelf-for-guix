@@ -1,0 +1,8 @@
+#!/bin/sh -e
+
+ORIGINAL=$1
+
+patchelf \
+  --set-interpreter "$GUIX_PROFILE/lib/ld-linux-x86-64.so.2" \
+  --set-rpath "$GUIX_PROFILE/libc" \
+  --output "$ORIGINAL.guix"
