@@ -1,0 +1,7 @@
+#!/bin/sh
+
+PACKAGE=$1
+
+LOCATION=$(guix package -I "$PACKAGE" | awk '{print $4}')
+
+tree "$LOCATION" | less -FSXin
