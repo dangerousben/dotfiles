@@ -13,7 +13,8 @@ cleanup() {
 trap 'cleanup $?' EXIT
 
 # Tar up stuff I care about
-tar -c -C ~ -f ~/backup.tgz -z ~/writing ~/.electrum/wallets ~/.walletwasabi/client/WalletBackups
+BACKUP_DIRS="$HOME/writing $HOME/.electrum/wallets $HOME/.walletwasabi/client/WalletBackups $HOME/Monero/wallets"
+tar -c -C ~ -f ~/backup.tgz -z $BACKUP_DIRS
 
 # Encrypt it
 age -p -o ~/backup.tgz.age ~/backup.tgz
