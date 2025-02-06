@@ -29,6 +29,7 @@ alias gsh="git show"
 alias gsw="git show -w"
 alias gp="git push"
 alias gpf="git pull --ff-only"
+alias grc="git rebase --continue"
 
 # Yes I know it's not an alias, but it's as good a place as any
 gcfurb() {
