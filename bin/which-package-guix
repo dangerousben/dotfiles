@@ -1,0 +1,18 @@
+#!/bin/sh -e
+
+FILE=$1
+
+if [ ! -r "$FILE" ]; then
+    FILE=$(fd -0 "$FILE" /run/current-system/profile $(guix package --list-profiles) | head -n1 -z | tr -d '\0')
+    if [ ! -r "$FILE" ]; then
+        echo "file '$FILE' not found" >&2
+        exit 1
+    fi
+fi
+
+PACKAGE=$(readlink "$FILE" | cut -d/ -f4 | cut -d- -f2- | sed 's/-/@/')
+
+guix show "$PACKAGE"
+if [ ! $? ]; then
+    echo "package identified as '$PACKAGE', but guix show failed"
+fi
