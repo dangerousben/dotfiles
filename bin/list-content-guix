@@ -2,6 +2,16 @@
 
 PACKAGE=$1
 
-LOCATION=$(guix package -I "^$PACKAGE\$" | awk '{print $4}')
+for PROFILE in /run/current-system/profile $(guix package --list-profiles); do
+    LOCATION=$(guix package -p "$PROFILE" -I "^$PACKAGE\$" | awk '{print $4}')
+    if [ -n "$LOCATION" ]; then
+        break
+    fi
+done
+
+if [ -z "$LOCATION" ]; then
+    echo "could not find package '$PACKAGE'"
+    exit 1
+fi
 
 tree "$LOCATION" | less -FSXin
