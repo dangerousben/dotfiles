@@ -21,7 +21,6 @@ else
     unset HISTFILE
 fi
 
-PATH=~/bin:~/.local/bin:~/.cargo/bin:~/.local/share/coursier/bin:~/opt/go/bin:~/go/bin:~/.dotnet/tools:~/.gem/ruby/2.7.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/games
 
 # Flags and files to be processed before those provided on the cli respectively, on each invocation.  Used here to include maths lib and increase default scale.
 BC_ENV_ARGS="-l"
@@ -33,14 +32,4 @@ PAGER=less
 # -F quit if only one screen; -R output ansi color escapes in raw form; -S truncate rather than wrap long lines; -X don't send termcap init (so that terminals don't switch/clear screen; -i case insensitive searches, -n suppress line numbers (unnecessary overhead); -j.5 set target line for jumps (eg from search or goto line) to middle of screen (newly added, will see how I get on with it)
 LESS="-FRSXin -j.5"
 
-GIT_EXEC_PATH=~/src/git
-GIT_TEMPLATE_DIR=~/.local/share/git-core/templates
-
 RIPGREP_CONFIG_PATH=~/.ripgreprc
-
-JAVA_HOME=$HOME/opt/jdk
-
-LIBVIRT_DEFAULT_URI=qemu:///system
-
-GUIX_PROFILE="/home/ben/.guix-profile"
-GUIX_LOCPATH="$GUIX_PROFILE/lib/locale"
