@@ -3,7 +3,7 @@
 FILE=$1
 
 if [ ! -r "$FILE" ]; then
-    FILE=$(fd -0 "$FILE" /run/current-system/profile $(guix package --list-profiles) | head -n1 -z | tr -d '\0')
+    FILE=$(fd -0 -g "$FILE" /run/current-system/profile $(guix package --list-profiles) | head -z -n1 | tr -d '\0')
     if [ ! -r "$FILE" ]; then
         echo "file '$FILE' not found" >&2
         exit 1
