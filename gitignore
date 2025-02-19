@@ -6,3 +6,9 @@ compile_commands.json
 metals.sbt
 __pycache__
 TAGS
+# TODO: figure out a better solution to this in general (maybe just a more obvious name than 'personal', and
+  once I start using guix home I will have to add that and probably rename the OS config to differentiate more
+  easily
+# TODO: Er... remember wtf this was all about anyway.  Is it actually related to guix system/home, or was that
+# just an incidental comment and it's something used more widely in guix or guile programming?
+personal/config.scm
