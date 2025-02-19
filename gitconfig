@@ -2,7 +2,7 @@
         name = Ben Spencer
         email = dangerous.ben@gmail.com
 [blame]
-        coloring = repeatedLines
+        #coloring = repeatedLines  # breaks display in emacs, need to figure out a way to disable it there
         showRoot = true
 [branch]
         autoSetupRebase = remote
@@ -23,6 +23,7 @@
 [diff "ansible-vault"]
 	textconv = ansible-vault view --vault-password-file=.vault_password
 [fetch]
+        writeCommitGraph = true  # experimental
         prune = true
         recurseSubmodules = on-demand
 [help]
@@ -33,10 +34,12 @@
         defaultBranch = main
 [log]
         decorate = short
+        diffMerges = remerge  # only a default, still has to be switched on with -m in the command I think (add to alias mb?)
 [merge]
         conflictstyle = diff3
         ff = only
 [push]
+        autoSetupRemote = true  # experimental
         default = current
         recurseSubmodules = check
 [rebase]
