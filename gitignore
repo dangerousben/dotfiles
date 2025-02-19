@@ -2,6 +2,7 @@
 .bsp
 .log
 .metals
+compile_commands.json
 metals.sbt
 __pycache__
 TAGS
