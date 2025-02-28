@@ -1,0 +1,3 @@
+#!/bin/sh -e
+
+xargs -n1 -0 < cmdline
