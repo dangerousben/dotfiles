@@ -1,5 +1,7 @@
 #!/bin/sh -e
 
+# TODO look for file in PATH if necessary (using which or... something)
+
 FILE=$1
 
 if [ ! -r "$FILE" ]; then
